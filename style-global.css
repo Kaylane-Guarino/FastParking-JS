@@ -1,0 +1,161 @@
+body {
+    font-family: 'Karla', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 130vh;
+    
+}
+
+body main {
+    flex-grow: 1;
+}
+
+.header {
+    height: 100px;
+    background-color: white;
+    color: whitesmoke;
+    font-size: 24px;
+    text-align: center;
+    line-height: 100px;
+    box-shadow: 0 5px 0 #DBC403;
+    margin: 0;
+    
+}
+
+h1{
+    margin: 0;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #004C81;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    gap: 50px; 
+}
+
+figure{
+    width: 100px;
+    height: 100px;
+    float: right;
+    margin-top: -100px;
+    background-image: url(img/fastparking.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+main .button{
+    align-self: flex-start;
+}
+
+/* Tabela */
+.table {
+    text-align: left;
+    border-collapse: collapse;
+    user-select: none;
+}
+
+.table thead {
+    background-color: #004C81;
+    color: white;
+    height: 100px;
+}
+
+.table thead th,
+.table tbody td {
+    padding: 0 20px;
+    height: 30px;
+    width: 200px;
+}
+.table tbody td {
+    height: 200px;
+    border-bottom: 1px solid white;
+}
+
+.table thead th:last-child,
+.table tbody td:last-child{
+    min-width: 250px;
+    text-align: center;
+}
+
+
+/* Botões */
+.button{
+    border-style: none;
+    padding: 0 20px;
+    min-height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+}
+
+.button.red {
+    background-color: #ff4949;
+}
+
+.button.blue {
+    background-color: #1fb6ff;
+    margin-left: 50px;
+}
+
+.button.green {
+    background-color: #13CE66;
+}
+
+/* Rodape */
+footer {
+    height: 50px;
+    background-color: #004C81;
+    color: whitesmoke;
+    text-align: center;
+    line-height: 50px;
+}
+
+/* Modal */
+.container-modal{
+    width: 550px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #004C81;
+}
+
+.input-group{
+    width: 450px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    position: relative;
+    top: 25%;
+    transform: translateY(-25%);
+}
+
+label{
+    font-family: 'Karla', sans-serif;
+    margin-right: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+input{
+    width: 350px;
+    height: 40px;
+    border-radius: 5px 5px 5px 5px;
+    outline: none;
+}
+
+.modal-footer-init {
+    width: 250px;
+    height: 60px;
+    position: relative;
+    top: 250%;
+    transform: translateY(-0%);
+    margin-left: auto;
+    margin-right: auto;
+}
