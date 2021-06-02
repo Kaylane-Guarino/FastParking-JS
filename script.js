@@ -36,10 +36,11 @@ var ano = data.getFullYear()
 const dataAtual = dia + '/' + mes + '/' + ano
 
 var hora = data.getHours()
-
 var min = data.getMinutes()
 
-const horaEntrada = hora + ':' + min
+const horaEntrada = hora + ":" + min
+
+console.log(dataAtual, horaEntrada)
 
 const createRow = (client, index) => {
     const recordClient = document.querySelector('#tabelaClientes tbody')
@@ -49,6 +50,7 @@ const createRow = (client, index) => {
         <td>${client.placa}</td>
         <td>${client.dataAtual}</td>
         <td>${client.horaEntrada}</td>
+        <td>R$15,00</td>
         <td>
             <button type='button' class='button blue' data-action="editar-${index}">editar</button>
             <button type='button' class='button red' data-action="deletar-${index}">deletar</button>
