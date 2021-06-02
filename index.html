@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FastParking</title>
     <link rel="stylesheet" href="style-global.css">
-    <link rel="stylesheet" href="./css Modal/modal.css">
     <script src="script.js" defer></script>
 
 </head>
@@ -16,19 +15,29 @@
         </header>
         <main>
             <div class="container-modal">
-                <div class="input-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" placeholder="Nome" />
+                <form class="form">
+                    <div class="input-group">
+                        <label for="nome" class="modal">Nome</label>
+                        <input type="text" name="nome" id="nome" placeholder="Nome" />
 
-                    <div class="modal-footer-init">
-                        <button type="submit" class="button green" id="salvar">Salvar</button>
-                        <button class="button blue" id="preco">Preços</button>
+                        <div class="modal-footer-init">
+                            <button type="submit" class="button green" id="salvar">Salvar</button>
+                            <button class="button blue" id="cancelar">Cancelar</button>
+                        </div>
                     </div>
-                </div>
-                <div class="input-group">
-                    <label for="placa">Placa</label>
-                    <input type="text" name="placa" id="placa" placeholder="Placa do carro" />
-                </div>
+                    <div class="input-group">
+                        <label for="placa" class="modal">Placa</label>
+                        <input type="text" name="placa" id="placa" placeholder="Placa do carro" />
+                    </div>
+                    <div class="input-group">
+                        <label for="placa" class="modal">Primeira Hora: $15,00</label>
+                        <input type="time" name="entrada" id="entrada" placeholder="Entrada" />
+                    </div>
+                    <div class="input-group">
+                        <label for="placa" class="modal">Demais Horas: +$10,00</label>
+                        <input type="time" name="saida" id="saida" placeholder="Saida" />
+                    </div>
+                </form>
             </div>
             <table class="table" id="tabelaClientes">
                 <thead>
@@ -45,24 +54,6 @@
 
                 </tbody>
             </table>
-            <div class="modal" id="modal">
-                <div class="modal-content">
-                    <header class="modal-header">
-                        <H1 id="tituloModal">Preço</H1>
-                        <span class="close-button" id="close">&#10006;</span>
-                    </header>
-                   
-                    <form class="form">
-                        <input type="time" id="entrada" max="5:00" min="1:00" />
-                        <input type="time"id="saida" max="6:00" min="2:00" />
-                    </form>
-                    
-                    <footer class="modal-footer">
-                        <button type="submit" class="button green" id="salvar1">Salvar</button>
-                        <button type="button" class="button blue" id="cancelar">Cancelar</button>
-                    </footer>
-                </div>
-            </div>
         </main>
         <footer>
             <div>

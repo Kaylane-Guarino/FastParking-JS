@@ -1,14 +1,9 @@
-'use strict'
+'use strict' 
 
-const openModal = () => document.querySelector('#modal')
-    .classList.add('active')
-
-const closeModal = () => document.querySelector('#modal')
-    .classList.remove('active')
-
+// const readDB = () => JSON.parse(localStorage.getItem('db')) ?? []
 const readDB = () => JSON.parse(localStorage.getItem('db')) ?? []
-
 const setDB = (db) => localStorage.setItem('db', JSON.stringify(db))
+
 
 const insertDB = (client) => {
     const db = readDB()
@@ -22,6 +17,7 @@ const updateClient = (client, index) => {
     setDB(db)
 }
 
+
 const clearTable = () => {
     const recordClient = document.querySelector('#tabelaClientes tbody')
     while (recordClient.firstChild) {
@@ -29,14 +25,30 @@ const clearTable = () => {
     }
 }
 
+var data = new Date()
+
+var dia = String(data.getDate()).padStart(2, '0')
+
+var mes = String(data.getMonth() + 1).padStart(2, '0')
+
+var ano = data.getFullYear()
+
+const dataAtual = dia + '/' + mes + '/' + ano
+
+var hora = data.getHours()
+
+var min = data.getMinutes()
+
+const horaEntrada = hora + ':' + min
+
 const createRow = (client, index) => {
     const recordClient = document.querySelector('#tabelaClientes tbody')
     const newTr = document.createElement('tr')
     newTr.innerHTML = `
         <td>${client.nome}</td>
         <td>${client.placa}</td>
-        <td>${client.entrada}</td>
-        <td>${client.saida}</td>
+        <td>${client.dataAtual}</td>
+        <td>${client.horaEntrada}</td>
         <td>
             <button type='button' class='button blue' data-action="editar-${index}">editar</button>
             <button type='button' class='button red' data-action="deletar-${index}">deletar</button>
@@ -54,7 +66,7 @@ const updateTable = () => {
 const clearInput = () => {
     document.querySelector('#nome').value = ''
     document.querySelector('#placa').value = ''
-    document.querySelector('#entrada').value =''
+    document.querySelector('#entrada').value = ''
     document.querySelector('#saida').value = ''
 }
 
@@ -78,12 +90,9 @@ const saveClient = () => {
         } else {
             updateClient(newClient, index)
         }
-  
-        closeModal()
-  
-        clearInput()
-   
+
         updateTable()
+
     }
 }
 
@@ -102,9 +111,7 @@ const deleteClient = (index) => {
 const editClient = (index) => {
     const db = readDB()
     document.querySelector('#nome').value = db[index].nome
-    document.querySelector('#placa').value = db[index].email
-    document.querySelector('#entrada').value = db[index].celular
-    document.querySelector('#saida').value = db[index].cidade
+    document.querySelector('#placa').value = db[index].placa
     document.querySelector('#nome').dataset.index = index
     openModal();
 }
@@ -121,22 +128,13 @@ const actionButttons = (event) => {
     }
 }
 
-document.querySelector('#preco')
-    .addEventListener('click', openModal)
-
-document.querySelector('#close')
-    .addEventListener('click', () => { closeModal(); clearInput() })
-
 document.querySelector('#cancelar')
-    .addEventListener('click', () => { closeModal(); clearInput() })
+    .addEventListener('click', () => { clearInput() })
 
 document.querySelector('#salvar')
-    .addEventListener('click', () => { saveClient() })
-
-document.querySelector('#salvar1')
-    .addEventListener('click', () => { saveClient() })
+    .addEventListener('click', saveClient)
 
 document.querySelector('#tabelaClientes')
-    .addEventListener('click', actionButttons)
+.addEventListener('click', actionButttons)
 
-updateTable ()
+updateTable()
