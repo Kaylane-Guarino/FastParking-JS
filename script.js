@@ -42,14 +42,16 @@ const horaEntrada = hora + ":" + min
 
 console.log(dataAtual, horaEntrada)
 
+
+
 const createRow = (client, index) => {
     const recordClient = document.querySelector('#tabelaClientes tbody')
     const newTr = document.createElement('tr')
     newTr.innerHTML = `
         <td>${client.nome}</td>
         <td>${client.placa}</td>
-        <td>${client.dataAtual}</td>
-        <td>${client.horaEntrada}</td>
+        <td>${dataAtual}</td>
+        <td>${horaEntrada}</td>
         <td>R$15,00</td>
         <td>
             <button type='button' class='button blue' data-action="editar-${index}">editar</button>
@@ -81,8 +83,6 @@ const saveClient = () => {
         const newClient = {
             nome: document.querySelector('#nome').value,
             placa: document.querySelector('#placa').value,
-            entrada: document.querySelector('#entrada').value,
-            saida: document.querySelector('#saida').value
         }
 
         const index = document.querySelector('#nome').dataset.index
@@ -115,7 +115,6 @@ const editClient = (index) => {
     document.querySelector('#nome').value = db[index].nome
     document.querySelector('#placa').value = db[index].placa
     document.querySelector('#nome').dataset.index = index
-    openModal();
 }
 
 const actionButttons = (event) => {

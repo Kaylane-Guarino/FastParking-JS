@@ -120,16 +120,17 @@ footer {
 /* Modal */
 .form{
     width: 550px;
-    height: 380px;
+    height: 230px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
     background-color: #004C81;
     border-radius: 10px 10px 10px;
 }
 
 .container-modal{
     width: 550px;
-    height: 380px;
+    height: 230px;
     margin-left: auto;
     margin-right: auto;
     background-color: #004C81;
@@ -165,7 +166,7 @@ input{
     width: 250px;
     height: 50px;
     position: relative;
-    top: 390%;
+    top: 180%;
     transform: translateY(-0%);
     margin-left: auto;
     margin-right: auto;
